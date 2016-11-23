@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="net.whatsbeef.showguide.model.Result"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        style="@style/Card"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                tools:text="name"
+                style="@style/textItem"
+                android:drawableStart="@drawable/tv"
+                android:text="@{viewModel.name}"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                tools:text="start time"
+                android:drawableStart="@drawable/ic_play_arrow_black_36dp"
+                style="@style/textItem"
+                android:text="@{viewModel.startTime}"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                tools:text="finish time"
+                android:id="@+id/txtEndTime"
+                android:drawableStart="@drawable/ic_stop_black_36dp"
+                style="@style/textItem"
+                android:text="@{viewModel.endTime}"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                tools:text="rating"
+                style="@style/textItem"
+                android:drawablePadding="10dp"
+                android:text="@{viewModel.rating}"
+                app:ratingImage="@{viewModel.rating}"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>
